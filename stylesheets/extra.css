@@ -1,0 +1,304 @@
+/* ---------- Brand colours ---------- */
+:root {
+  --brand: #ff6b2c;
+  --brand-2: #ff9a3c;
+  --md-primary-fg-color: #ff6b2c;
+  --md-primary-fg-color--light: #ff9a3c;
+  --md-primary-fg-color--dark: #e2551a;
+  --md-accent-fg-color: #ff7a33;
+  --md-typeset-a-color: #e2551a;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 225;
+  --md-default-bg-color: #0f1117;
+  --md-default-fg-color--light: #a3a9b8;
+  --md-code-bg-color: #171a23;
+  --md-typeset-a-color: #ff8a4c;
+  --card-bg: #151821;
+  --card-border: #262a36;
+}
+
+[data-md-color-scheme="default"] {
+  --card-bg: #ffffff;
+  --card-border: #e6e8ee;
+}
+
+/* ---------- Header & tabs ---------- */
+.md-header,
+.md-tabs {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.md-header {
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: none;
+}
+.md-header--shadow { box-shadow: 0 4px 16px rgb(0 0 0 / 0.12); }
+.md-tabs { border-bottom: 1px solid var(--card-border); }
+.md-tabs__link { font-weight: 500; opacity: 0.75; }
+.md-tabs__link--active,
+.md-tabs__link:hover { color: var(--brand); opacity: 1; }
+.md-header__button.md-logo img { height: 1.6rem; }
+.md-search__form { border-radius: 8px; }
+
+/* ---------- Typography ---------- */
+.md-typeset h1 { font-weight: 800; letter-spacing: -0.02em; color: var(--md-default-fg-color); }
+.md-typeset h2 { font-weight: 700; letter-spacing: -0.01em; }
+.md-typeset h2 {
+  margin-top: 2.2em;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--card-border);
+}
+.md-typeset h3 { font-weight: 650; margin-top: 1.8em; }
+.md-typeset h1 + .badges { margin-top: -0.6rem; }
+/* Intro paragraph under a page title */
+.md-typeset .lead {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 38rem;
+}
+.md-typeset .lead + p .md-button { margin: 0.2rem 0.4rem 0.2rem 0; }
+.md-typeset blockquote {
+  border-left-color: var(--brand);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95em;
+}
+
+/* ---------- Tables ---------- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.72rem;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background: var(--card-bg);
+  font-weight: 600;
+}
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th { padding: 0.7em 1.1em; }
+.md-typeset table:not([class]) th { white-space: nowrap; }
+.md-typeset table:not([class]) tbody tr:hover { background: color-mix(in srgb, var(--brand) 4%, transparent); }
+/* Key/value tables without header text ("At a glance") */
+.md-typeset table:not([class]):has(thead th:empty) thead { display: none; }
+.md-typeset table:not([class]):has(thead th:empty) td:first-child { width: 11rem; color: var(--md-default-fg-color--light); }
+
+/* ---------- Code ---------- */
+.md-typeset pre > code { border-radius: 10px; }
+.md-typeset .highlight { border-radius: 10px; }
+
+/* ---------- Buttons ---------- */
+.md-typeset .md-button {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.55em 1.4em;
+}
+.md-typeset .md-button--primary {
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  border: none;
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover { filter: brightness(1.08); color: #fff; }
+
+/* ---------- Badges ---------- */
+.badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 1.2rem; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--md-default-fg-color--light);
+}
+.badge--brand {
+  color: var(--brand);
+  border-color: color-mix(in srgb, var(--brand) 40%, transparent);
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+.md-typeset a.badge:hover { color: var(--brand); border-color: var(--brand); }
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+  margin: -1rem 0 1.5rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 80% at 50% 0%, color-mix(in srgb, var(--brand) 22%, transparent), transparent 70%),
+    var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+.hero img { width: 64px; height: 64px; margin-bottom: 0.8rem; }
+.md-typeset .hero h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+  color: var(--md-default-fg-color);
+}
+.hero h1 span {
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p { max-width: 34rem; margin: 0 auto 1.4rem; font-size: 0.95rem; color: var(--md-default-fg-color--light); }
+.hero .md-button { margin: 0.25rem; }
+@media (max-width: 600px) {
+  .md-typeset .hero h1 { font-size: 1.8rem; }
+  .hero { padding: 2.5rem 1rem 2rem; }
+}
+
+/* ---------- Cards ---------- */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--card-bg);
+  padding: 1.1rem 1.2rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+}
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards .lg { color: var(--brand); }
+.md-typeset .grid.cards hr { margin: 0.6rem 0; border-color: var(--card-border); }
+
+/* ---------- Home page: no edit button above the hero ---------- */
+.md-content__inner:has(> .hero) > .md-content__button { display: none; }
+.md-content__inner > .hero:first-child { margin-top: 0; }
+
+/* ---------- Footer ---------- */
+.md-footer, .md-footer-meta { background: var(--md-default-bg-color); color: var(--md-default-fg-color--light); }
+.md-footer-meta { border-top: 1px solid var(--card-border); }
+.md-footer__link { color: var(--md-default-fg-color); }
+
+/* ---------- Light-mode search box ---------- */
+[data-md-color-scheme="default"] .md-search__form { background-color: #f1f2f5; }
+[data-md-color-scheme="default"] .md-search__form:hover { background-color: #e8eaef; }
+[data-md-color-scheme="default"] .md-search__input { color: var(--md-default-fg-color); }
+[data-md-color-scheme="default"] .md-search__input::placeholder,
+[data-md-color-scheme="default"] .md-search__icon { color: var(--md-default-fg-color--light); }
+
+/* ---------- 404 page ---------- */
+.not-found { margin-top: 1rem; }
+.not-found .code {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Setting names on one line in tables, long values may wrap ---------- */
+.md-typeset table:not([class]) td:first-child code { white-space: nowrap; }
+.md-typeset table:not([class]) td:last-child { min-width: 14rem; }
+
+/* ---------- Header: no star/fork counters next to the GitHub link ---------- */
+.md-source__facts { display: none; }
+.md-source__repository { font-weight: 600; }
+
+/* ---------- Numbered steps (installation) ---------- */
+.md-typeset .steps > ol { counter-reset: step; list-style: none; padding-left: 0; margin-left: 0; }
+.md-typeset .steps > ol > li {
+  counter-increment: step;
+  position: relative;
+  margin: 0 0 1.4em 0;
+  padding: 0 0 0 2.6rem;
+}
+.md-typeset .steps > ol > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -0.05rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+}
+.md-typeset .steps > ol > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0.83rem;
+  top: 1.9rem;
+  bottom: -1.2em;
+  width: 1px;
+  background: var(--card-border);
+}
+
+/* ---------- Home: highlights row ---------- */
+.md-typeset .highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+}
+.md-typeset .highlights > div {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--card-bg);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .highlights > div p { margin: 0; }
+.md-typeset .highlights .twemoji { color: var(--brand); display: block; margin-bottom: 0.4rem; }
+.md-typeset .highlights .twemoji { height: 1.5rem; width: 1.5rem; }
+.md-typeset .highlights .twemoji svg { width: 1.5rem; height: 1.5rem; max-height: none; }
+.md-typeset .highlights strong { display: block; color: var(--md-default-fg-color); font-size: 0.8rem; margin-bottom: 0.15rem; }
+@media (max-width: 960px) { .md-typeset .highlights { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .md-typeset .highlights { grid-template-columns: 1fr; } }
+
+/* ---------- Admonitions: flatter, rounded, brand accents ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  border-width: 1px;
+  border-left-width: 4px;
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary { font-weight: 600; }
+.md-typeset details { background: var(--card-bg); }
+
+/* ---------- Content tabs ---------- */
+.md-typeset .tabbed-labels > label { font-weight: 600; }
+
+/* ---------- Links in cards: one clear call to action ---------- */
+.md-typeset .grid.cards p:last-child > a:only-child { font-weight: 600; }
+
+/* ---------- Screenshots ---------- */
+.md-typeset figure.screenshot { margin: 1.4em 0; max-width: 100%; }
+.md-typeset figure.screenshot img {
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.25);
+}
+.md-typeset figure.screenshot figcaption {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  max-width: none;
+  margin-top: 0.6em;
+}
